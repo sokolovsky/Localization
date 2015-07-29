@@ -22,7 +22,7 @@ class ProjectBaseComponent extends \CBitrixComponent {
      */
     public function getLocalization() {
         if (!$this->local) {
-            $file = $_SERVER['DOCUMENT_ROOT'].'/'.$this->getPath().'/'.LANGUAGE_ID.'/';
+            $file = $_SERVER['DOCUMENT_ROOT'].'/'.$this->getPath().'/langs/'.LANGUAGE_ID.'.php';
             $data = array();
             if (file_exists($file)) {
                 $data = include $file;

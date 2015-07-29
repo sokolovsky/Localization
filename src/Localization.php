@@ -19,9 +19,6 @@ class Localization {
      * @return Options
      */
     private function getData() {
-        if (!$this->data) {
-            $this->data = new Options(include $this->getOptionParam('path'));
-        }
         return $this->data;
     }
 
@@ -49,5 +46,12 @@ class Localization {
 
     public function getDataByPath($path) {
         return $this->getData()->get($path, '');
+    }
+
+    /**
+     * @param array $data
+     */
+    public function addData(array $data) {
+        $this->getData()->merge($data);
     }
 }
